@@ -126,7 +126,7 @@ export default function StepFinalSchedule({
           className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 rounded-md transition-colors whitespace-nowrap"
         >
           <Download className="w-3.5 h-3.5" />
-          Exportar CSV ({active.shortName})
+          Exportar PDF ({active.shortName})
         </button>
       </div>
 
@@ -141,8 +141,8 @@ export default function StepFinalSchedule({
               sch.policyStatus === 'viable'
                 ? { label: 'Cumple política', cls: 'text-emerald-700', Icon: CheckCircle2 }
                 : sch.policyStatus === 'observacion'
-                ? { label: 'Con observación', cls: 'text-amber-700', Icon: AlertTriangle }
-                : { label: 'Fuera de política', cls: 'text-red-700', Icon: XCircle };
+                  ? { label: 'Con observación', cls: 'text-amber-700', Icon: AlertTriangle }
+                  : { label: 'Fuera de política', cls: 'text-red-700', Icon: XCircle };
 
             const StatusIcon = statusMeta.Icon;
 
@@ -152,11 +152,10 @@ export default function StepFinalSchedule({
                 type="button"
                 onClick={() => onSelectStrategy(sch.id)}
                 aria-pressed={isSelected}
-                className={`text-left bg-white rounded-lg p-4 border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B91C1C] ${
-                  isSelected
+                className={`text-left bg-white rounded-lg p-4 border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B91C1C] ${isSelected
                     ? 'border-[#B91C1C] ring-1 ring-[#B91C1C]/25'
                     : 'border-slate-200 hover:border-slate-300'
-                }`}
+                  }`}
               >
                 <div className="flex items-center justify-between gap-2 text-xs mb-1">
                   <span
@@ -181,9 +180,9 @@ export default function StepFinalSchedule({
                       {sch.id === 'uniforme'
                         ? `${formatSoles(sch.avgInstallment, 0)} fija`
                         : `${formatSoles(sch.minInstallment, 0)} – ${formatSoles(
-                            sch.maxInstallment,
-                            0
-                          )}`}
+                          sch.maxInstallment,
+                          0
+                        )}`}
                     </dd>
                   </div>
                   <div className="flex items-baseline justify-between gap-2">
@@ -248,17 +247,16 @@ export default function StepFinalSchedule({
                   row.status === 'deficit'
                     ? { label: 'Déficit', cls: 'text-red-700 font-semibold' }
                     : row.status === 'estres'
-                    ? { label: 'Sobre límite', cls: 'text-red-700 font-medium' }
-                    : row.status === 'ajustado'
-                    ? { label: 'Ajustado', cls: 'text-amber-700 font-medium' }
-                    : { label: 'Holgado', cls: 'text-emerald-700' };
+                      ? { label: 'Sobre límite', cls: 'text-red-700 font-medium' }
+                      : row.status === 'ajustado'
+                        ? { label: 'Ajustado', cls: 'text-amber-700 font-medium' }
+                        : { label: 'Holgado', cls: 'text-emerald-700' };
 
                 return (
                   <tr
                     key={row.period}
-                    className={`hover:bg-slate-50/80 ${
-                      row.seasonalityTier === 'alto' ? 'bg-red-50/25' : ''
-                    }`}
+                    className={`hover:bg-slate-50/80 ${row.seasonalityTier === 'alto' ? 'bg-red-50/25' : ''
+                      }`}
                   >
                     <td className="py-2.5 px-3.5 font-medium text-slate-900 whitespace-nowrap">
                       <span className="font-mono text-slate-400 mr-2">
