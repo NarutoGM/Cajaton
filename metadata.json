@@ -1,0 +1,6 @@
+{
+  "name": "Paga a tu Ritmo — Caja Trujillo",
+  "description": "Plataforma inteligente de evaluación crediticia con OCR, predicción de estacionalidad, optimización matemática de cuotas variables y asistente de análisis para Caja Trujillo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
